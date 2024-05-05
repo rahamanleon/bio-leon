@@ -1,78 +1,51 @@
-/* styles.css */
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    transition: background-image 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-image 1s ease-in-out;
 }
 
-.profile-pic {
-    margin-bottom: 20px;
+.time, .info {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.profile-pic img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Round frame for the profile picture */
+h1, p {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
 }
 
-.info {
-    text-align: right; /* Align text to the right */
-    margin-bottom: 20px;
-    color: #FFEB3B; /* Highlight color for info */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+a {
+  color: #ffc107; /* Highlight color */
 }
 
-.info p {
-    display: inline; /* Keep all <p> elements in one line */
-}
-
-.info a {
-    color: #03A9F4; /* Highlight color for links */
-}
-
-.time {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #4CAF50; /* Highlight color for time and temperature */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
-}
-
-.greeting {
-    text-align: center;
-    color: #FF5722; /* Highlight color for greeting */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
-}
-
-/* Define background images for different times of the day */
 .morning {
-    background-image: url('https://tinyurl.com/236kum8f'); /* Replace with your morning image URL */
+  background-image: url('https://tinyurl.com/236kum8f'); /* Replace with your morning image URL */
 }
 
 .noon {
-    background-image: url('https://tinyurl.com/23napmab'); /* Replace with your noon image URL */
+  background-image: url('https://tinyurl.com/23napmab'); /* Replace with your noon image URL */
 }
 
 .evening {
-    background-image: url('https://tinyurl.com/29bm9sm3'); /* Replace with your evening image URL */
+  background-image: url('https://tinyurl.com/29bm9sm3'); /* Replace with your evening image URL */
 }
 
 .night {
-    background-image: url('https://tinyurl.com/236kum8f'); /*5 days limit Replace with your night image URL */
+  background-image: url('https://tinyurl.com/27qy6djx'); /* Replace with your night image URL */
 }
 
 .footer {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    color: #fff;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
 }
