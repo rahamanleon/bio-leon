@@ -1,0 +1,71 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-image 1s ease-in-out;
+}
+
+.profile-pic {
+    margin-bottom: 20px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Round frame for the profile picture */
+}
+
+.info {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFEB3B; /* Highlight color for info */
+}
+
+.info a {
+    color: #03A9F4; /* Highlight color for links */
+}
+
+.time {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Highlight color for time and temperature */
+}
+
+.greeting {
+    text-align: center;
+    color: #FF5722; /* Highlight color for greeting */
+}
+
+/* Define background images for different times of the day */
+.morning {
+    background-image: url('https://tinyurl.com/236kum8f'); /* Replace with your morning image URL */
+}
+
+.noon {
+    background-image: url('https://tinyurl.com/23napmab'); /* Replace with your noon image URL */
+}
+
+.evening {
+    background-image: url('https://tinyurl.com/29bm9sm3'); /* Replace with your evening image URL */
+}
+
+.night {
+    background-image: url('https://tinyurl.com/27qy6djx'); /* Replace with your night image URL */
+}
+
+.footer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+}
