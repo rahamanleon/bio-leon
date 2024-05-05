@@ -26,9 +26,13 @@ body {
 }
 
 .info {
-    text-align: center;
+    text-align: right; /* Align text to the right */
     margin-bottom: 20px;
     color: #FFEB3B; /* Highlight color for info */
+}
+
+.info p {
+    display: inline; /* Keep all <p> elements in one line */
 }
 
 .info a {
@@ -60,7 +64,7 @@ body {
 }
 
 .night {
-    background-image: url('https://tinyurl.com/27qy6djx'); /* Replace with your night image URL */
+    background-image: url('https://ibb.co/L5FdNsr'); /* Replace with your night image URL */
 }
 
 .footer {
