@@ -1,43 +1,37 @@
-// script.js
-document.addEventListener("DOMContentLoaded", function() {
-    // Display Bangladesh time
-    function displayBdTime() {
-        const bdTimeElement = document.getElementById("bd-time");
-        const options = { timeZone: "Asia/Dhaka", hour12: false, hour: 'numeric', minute: 'numeric' };
-        const bdTime = new Date().toLocaleTimeString('en-US', options);
-        bdTimeElement.textContent = bdTime;
+// Function to get the current time in Bangladesh time zone
+function getBangladeshTime() {
+    const now = new Date();
+    const options = { timeZone: 'Asia/Dhaka' };
+    return now.toLocaleString('en-US', options);
+}
+
+// Function to set background image and greeting based on time
+function setBackgroundAndGreeting() {
+    const currentHour = new Date().getHours();
+    let timeOfDay, greeting;
+    if (currentHour >= 5 && currentHour < 12) {
+        timeOfDay = 'morning';
+        greeting = 'Good morning 🌅';
+    } else if (currentHour >= 12 && currentHour < 18) {
+        timeOfDay = 'noon';
+        greeting = 'Good afternoon ☀️';
+    } else if (currentHour >= 18 && currentHour < 20) {
+        timeOfDay = 'evening';
+        greeting = 'Good evening 🌆';
+    } else {
+        timeOfDay = 'night';
+        greeting = 'Good night 🌙';
     }
+    document.querySelector('.container').classList = `container ${timeOfDay}`;
+    document.getElementById('greeting').textContent = greeting;
+}
 
-    // Display Dinajpur temperature
-    function displayDinajpurTemp() {
-        // You would need to fetch the temperature data from an API
-        // For demonstration purposes, let's assume the temperature is 25°C
-        const dinajpurTempElement = document.getElementById("dinajpur-temp");
-        dinajpurTempElement.textContent = "25";
-    }
+// Function to update the Bangladesh time every second
+function updateTime() {
+    document.getElementById('bd-time').textContent = `Bangladesh Time: ${getBangladeshTime()}`;
+}
 
-    // Set greeting based on time
-    function setGreeting() {
-        const now = new Date();
-        const hour = now.getHours();
-        let greeting;
-
-        if (hour >= 5 && hour < 12) {
-            greeting = "Good morning! ☀️";
-        } else if (hour >= 12 && hour < 18) {
-            greeting = "Good afternoon! 🌤️";
-        } else if (hour >= 18 && hour < 20) {
-            greeting = "Good evening! 🌆";
-        } else {
-            greeting = "Good night! 🌙";
-        }
-
-        const greetingElement = document.getElementById("greeting");
-        greetingElement.textContent = greeting;
-    }
-
-    // Call functions to display time, temperature, and set greeting
-    displayBdTime();
-    displayDinajpurTemp();
-    setGreeting();
-});
+// Call the setBackgroundAndGreeting function initially and every minute to update based on the time
+setBackgroundAndGreeting();
+setInterval(setBackgroundAndGreeting, 60000); // Update every minute
+setInterval(updateTime, 1000); // Update time every second
