@@ -5,6 +5,18 @@ function getBangladeshTime() {
     return now.toLocaleString('en-US', options);
 }
 
+// Function to get the current temperature in Dinajpur
+async function getDinajpurTemperature() {
+    try {
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Dinajpur&appid=YOUR_API_KEY&units=metric');
+        const data = await response.json();
+        return data.main.temp;
+    } catch (error) {
+        console.error('Error fetching Dinajpur temperature:', error);
+        return 'N/A';
+    }
+}
+
 // Function to set background image and greeting based on time
 function setBackgroundAndGreeting() {
     const currentHour = new Date().getHours();
@@ -31,7 +43,15 @@ function updateTime() {
     document.getElementById('bd-time').textContent = `Bangladesh Time: ${getBangladeshTime()}`;
 }
 
-// Call the setBackgroundAndGreeting function initially and every minute to update based on the time
+// Function to update the Dinajpur temperature every minute
+async function updateTemperature() {
+    const temperature = await getDinajpurTemperature();
+    document.getElementById('dinajpur-temp').textContent = `Dinajpur Temperature: ${temperature}°C`;
+}
+
+// Call the functions initially and schedule updates
 setBackgroundAndGreeting();
-setInterval(setBackgroundAndGreeting, 60000); // Update every minute
+updateTime();
+updateTemperature();
 setInterval(updateTime, 1000); // Update time every second
+setInterval(updateTemperature, 60000); // Update temperature every minute
